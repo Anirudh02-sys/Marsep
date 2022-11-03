@@ -1,0 +1,26 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+{% block body %}
+<style>
+  .button {
+    background-color: #0b1960;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem 0.125rem;
+    cursor: pointer;
+    position: absolute;
+    left: 6rem;
+
+  }
+</style>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <button class="button" type="Add New Act">Add New Act</button>
+  </div>  
+{% endblock body %}
+{% endblock %}  
