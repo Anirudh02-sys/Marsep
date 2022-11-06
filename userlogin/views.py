@@ -3,4 +3,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def login(request):
-    return(render(request,'createnewuser.html'))
+    return(render(request,'about.html'))
