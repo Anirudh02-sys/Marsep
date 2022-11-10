@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'userlogin.apps.UserloginConfig',
+    'welcomepg.apps.WelcomepgConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+AUTH_USER_MODEL = "welcomepg.User"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'brivas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'brivas',
+        'NAME' : 'brivas2',
         'USER' : 'postgres',
         'PASSWORD' : 'anu@2msgo',
         'HOST': 'localhost'

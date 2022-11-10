@@ -179,7 +179,7 @@ hr {
 
       <label for="type"><b>Choose the type :</b></label>
       <br>
-      <select id="type">
+      <select name="choose" id="type">
       <option value="Auditor"><b>Auditor</b></option>
       <option value="Sub-Contractor">Sub-Contractor</option>
       </br>
@@ -193,8 +193,12 @@ hr {
         <button type="button" class="cancelbtn">Cancel</button>
         <p>      </p>
         <button type="submit" class="signupbtn">Sign Up</button>
+        {% for message in messages %} 
+        <h3>{{message}}</h3>
+        {% endfor %}
       </div>
     </div>
   </form>
+ 
 </body>
 </html>
