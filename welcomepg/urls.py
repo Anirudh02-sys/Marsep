@@ -7,5 +7,6 @@ urlpatterns = [
     path("home",views.home, name='home'),
     path("actmaster",views.actmaster,name='actmaster'),
     path("createnewuser",views.createnewuser, name='createnewuser'),
-    path("newact",views.newact,name='newact')
+    path("newact",views.newact,name='newact'),
+    path("logout",views.logout, name='logout')
 ]

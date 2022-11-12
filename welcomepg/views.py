@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import User
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import authenticate
+from django.contrib import auth
 # Create your views here.
 def login(request):
     if(request.method =='POST'):
@@ -56,3 +57,7 @@ def createnewuser(request):
         return redirect('/')
     else:
         return render(request,'createnewuser.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')        
