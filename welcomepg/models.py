@@ -8,3 +8,7 @@ class User(AbstractUser):
 
     def _str_(self):
         return f"{self.username}"
+
+class acts(models.Model):
+    act_name=models.TextField()
+    act_shname=models.CharField(max_length=5)

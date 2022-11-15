@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
+from .models import User,acts
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import authenticate
 from django.contrib import auth
@@ -18,13 +18,23 @@ def login(request):
         return(render(request,'loginpage.html'))
 
 def home(request):
-    return render(request,'dashboard.html')
+    return render(request,'adminpage.html')
     
 def actmaster(request):
     return render(request,'actmaster.html')
 
 def newact(request):
-    return render(request,'newact.html')    
+    if (request.method == 'POST'):
+        act_name = request.POST['actn']
+        act_sname = request.POST['actsn']
+        actsdata = acts.objects.create(act_name = act_name, act_shname = act_sname)
+        actsdata.save();
+
+        return render(request,'actmaster.html')
+    else:
+        return render(request,'newact.html')  
+
+
 
 def createnewuser(request):
 

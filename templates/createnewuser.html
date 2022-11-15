@@ -1,6 +1,9 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+{% block body %}
 {% load static %}
-<!DOCTYPE html>
-<html>
+
 <style>
 /*body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}*/
@@ -156,7 +159,7 @@ hr {
 <form class="modal-content" action="createnewuser" method="post">
     {% csrf_token %}  
     <div class="container">
-      <h1>Sign Up</h1>
+      <h1>Create New Account</h1>
       <p>Fill up to create a new user</p>
       
       <label for="email"><b>Email</b></label>
@@ -201,4 +204,6 @@ hr {
   </form>
  
 </body>
-</html>
+
+{% endblock body %}
+{% endblock %} 

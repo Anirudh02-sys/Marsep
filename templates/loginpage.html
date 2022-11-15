@@ -10,7 +10,11 @@
 			{% csrf_token %}
 			<input type="text" name="u" placeholder="Username" required="required" />
 			  <input type="password" name="p" placeholder="Password" required="required" />
-			  <button type="submit" class="btn btn-primary btn-block btn-large">Sign in.</button>
+			  <button type="submit" class="btn btn-primary btn-block btn-large">Sign in</button>
+
+			  {% for message in messages %} 
+              <h3>{{message}}</h3>
+              {% endfor %}
 		  </form>
 	  </div>
 </html>
