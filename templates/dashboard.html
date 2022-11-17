@@ -121,28 +121,43 @@ body {
 
 
 <div class="navbar" id="myNavbar">
-    <a class="active">Hello,admin :)</a>
+    <a class="active">Hello {{ request.user.username }}</a>
     <a href="#contact">Contact</a>
     <a href="/logout">Logout</a>
     <a href="/home" >Home</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    <span style="font-size:30px;position:relative;color:rgb(14, 6, 6);cursor:pointer" onclick="openNav()">&#9776; </span>
 
-  </div>
+</div>
 
 <div style="padding-left:16px">
  
 </div>
+{% if request.user.is_superuser %}
 <div id="mySidenav" class="sidenav">
-    <b>Dashboard</b>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <head><b>Dashboard</b></head>
+    <a href="javascript:void(0)" name="Dashboard" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/createnewuser">User Management</a>
     <a href="#">Components</a>
     <a href="/actmaster">Act Master</a>
     <a href="/admin">Settings</a>
   </div>
+{% elif request.user.typeofusr == 'Sub-Contractor' %}
+<div id="mySidenav" class="sidenav">
+  <head><b>Dashboard</b></head>
+  <a href="javascript:void(0)" name="Dashboard" class="closebtn" onclick="closeNav()">&times;</a>
+  
+</div>
+{% elif request.user.typeofusr == 'Auditor' %}
+<div id="mySidenav" class="sidenav">
+  <head><b>Dashboard</b></head>
+  <a href="javascript:void(0)" name="Dashboard" class="closebtn" onclick="closeNav()">&times;</a>
+  
+</div>
+{% endif %}
   
   
-  <span style="font-size:30px;position:relative;color:rgb(14, 6, 6);cursor:pointer" onclick="openNav()">&#9776; </span>
+  
   
   {% block body %} {% endblock body %}
 <script>

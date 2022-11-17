@@ -1,6 +1,4 @@
 {% extends 'dashboard.html' %}
-
-{% block content %}
 {% block body %}
 {% load static %}
 
@@ -158,52 +156,62 @@ hr {
 
 <form class="modal-content" action="createnewuser" method="post">
     {% csrf_token %}  
+  
     <div class="container">
       <h1>Create New Account</h1>
       <p>Fill up to create a new user</p>
-      
-      <label for="email"><b>Email</b></label>
+      <br>    
+      <label for="email"><br><b>Email</b></label>
+      <br>
       <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="fname"><b>First Name</b></label>
+      <br>
+      <label for="fname"><br><b>First Name</b></label>
+      <br>
       <input type="text" placeholder="first name" name="fname" required>
-
-      <label for="lname"><b>Last Name</b></label>
+      <br>
+      <label for="lname"><br><b>Last Name</b></label>
+      <br>
       <input type="text" placeholder="last name" name="lname" required>
-
-      <label for="usr"><b>User Name</b></label>
+      <br>
+      <label for="usr"><br><b>User Name</b></label>
+      <br>
       <input type="text" placeholder="user name" name="usr" required>
-      
-      <label for="psw"><b>Password</b></label>
+      <br>
+      <label for="psw"><br><b>Password</b></label>
+      <br>
       <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <br>
+      <label for="psw-repeat"><br><b>Repeat Password</b></label><br>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-      <label for="type"><b>Choose the type :</b></label>
       <br>
-      <select name="choose" id="type">
-      <option value="Auditor"><b>Auditor</b></option>
+      <label for="type"><br><b>User Typer&nbsp;&nbsp;</b></label>
+      <select name="choose" id="type" class="form-select" aria-label="Default select example">
+      <option value="Auditor">Auditor</option>
       <option value="Sub-Contractor">Sub-Contractor</option>
-      </br>
-      
       </select>
+      
+      <div>
+      <label for="type"><br><b>Allot to&nbsp;&nbsp;</b></label>
+      <select name="allot" id="type" class="form-select" aria-label="Default select example">
+      {% for i in auditors %}
+      <option value="Auditor">{{ i.username }}</option>
+      {% endfor %}
+      </select>
+      </div>
+    
       <br>
-      <label for="ctno"><b><br>Contact Number</b></br></label>
+      <label for="ctno"><b><br>Contact Number</b><br></label>
+      <br>
       <input type="number" name="telphone" placeholder="Contact number" maxlength="10"  title="Ten digits code" required/> 
-    </br>
+    <br>
       <div class="clearfix">
         <button type="button" class="cancelbtn">Cancel</button>
         <p>      </p>
         <button type="submit" class="signupbtn">Sign Up</button>
-        {% for message in messages %} 
-        <h3>{{message}}</h3>
-        {% endfor %}
       </div>
     </div>
   </form>
  
 </body>
 
-{% endblock body %}
 {% endblock %} 

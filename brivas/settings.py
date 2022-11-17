@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME' : 'brivas2',
         'USER' : 'postgres',
-        'PASSWORD' : 'anu@2msgo',
+        'PASSWORD' : '1234',
         'HOST': 'localhost'
     }
 }
